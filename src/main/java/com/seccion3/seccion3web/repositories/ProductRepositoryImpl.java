@@ -3,8 +3,10 @@ package com.seccion3.seccion3web.repositories;
 import java.util.Arrays;
 import java.util.List;
 
-import com.seccion3.seccion3web.models.Product;
+import org.springframework.stereotype.Component;
 
+import com.seccion3.seccion3web.models.Product;
+@Component
 public class ProductRepositoryImpl implements ProductRepository{
 
     private List<Product> data;

@@ -2,6 +2,7 @@ package com.seccion3.seccion3web.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,8 @@ import com.seccion3.seccion3web.services.ProductServiceImpl;
 @RequestMapping("/api")
 public class SomeController {
 
-    private ProductServiceImpl productService = new ProductServiceImpl();
+    @Autowired
+    private ProductServiceImpl productService;
 
     @GetMapping
     public List<Product> list(){
