@@ -9,14 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.seccion3.seccion3web.models.Product;
-import com.seccion3.seccion3web.services.ProductServiceImpl;
+
+//Se cambia la importación de ProductServiceImpl por ProductService
+//para que se pueda inyectar la interfaz y no la clase
+//y desacoplar la clase de la implementación
+import com.seccion3.seccion3web.services.ProductService;
+
 
 @RestController
 @RequestMapping("/api")
 public class SomeController {
 
     @Autowired
-    private ProductServiceImpl productService;
+    private ProductService productService;
 
     @GetMapping
     public List<Product> list(){

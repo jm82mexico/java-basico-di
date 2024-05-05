@@ -7,13 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.seccion3.seccion3web.models.Product;
-import com.seccion3.seccion3web.repositories.ProductRepositoryImpl;
+//Se cambia la importación de ProductRepositoryImpl por ProductRepository
+//para que se pueda inyectar la interfaz y no la clase
+//y desacoplar la clase de la implementación
+import com.seccion3.seccion3web.repositories.ProductRepository;
+
 @Component
 public class ProductServiceImpl implements ProductService{
 
     @Autowired
-    private ProductRepositoryImpl productRepository ;
-    
+    private ProductRepository productRepository ;
+
     @Override
     public List<Product> findAll() {
         return productRepository.findAll().stream().map(p  -> {
