@@ -16,8 +16,14 @@ import com.seccion3.seccion3web.repositories.ProductRepository;
 @Service
 public class ProductServiceImpl implements ProductService{
 
-    @Autowired
-    private ProductRepository productRepository ;
+    
+    private ProductRepository productRepository ;    
+
+    //la inyección de dependencias se hace por constructor
+    //no se necesita el @Autowired
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Override
     public List<Product> findAll() {
