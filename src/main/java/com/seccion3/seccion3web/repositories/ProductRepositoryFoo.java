@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.seccion3.seccion3web.models.Product;
 @Primary
-@Repository
+@Repository("productFoo")
 public class ProductRepositoryFoo implements ProductRepository{
 
     @Override
