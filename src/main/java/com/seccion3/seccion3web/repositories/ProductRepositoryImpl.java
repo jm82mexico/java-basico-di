@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.seccion3.seccion3web.models.Product;
+@RequestScope
 @Primary
 @Repository("productList")
 public class ProductRepositoryImpl implements ProductRepository{

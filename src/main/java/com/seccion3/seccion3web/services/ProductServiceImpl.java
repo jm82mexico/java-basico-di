@@ -20,7 +20,7 @@ public class ProductServiceImpl implements ProductService{
 
     //la inyección de dependencias se hace por constructor
     //no se necesita el @Autowired
-    public ProductServiceImpl(@Qualifier("productFoo")ProductRepository productRepository) {
+    public ProductServiceImpl(@Qualifier("productList")ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
@@ -31,6 +31,8 @@ public class ProductServiceImpl implements ProductService{
             //Product newProduct = new Product(p.getId(), p.getProduct(),priceImp.longValue()); 
             Product newProduct = (Product) p.clone();
             newProduct.setPrice(priceImp.longValue());
+            //p.setPrice(priceImp.longValue());
+            //return p;
             return newProduct;
         }).collect(Collectors.toList());
     }
